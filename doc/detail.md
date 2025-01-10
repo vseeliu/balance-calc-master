@@ -98,7 +98,7 @@ insert into transaction(transaction_id, source_account_number, target_account_nu
     ![](./image/network-error.png)
 - UNIT-test
   ![](./image/unit-test.png)
-
+  由于时间紧张，没有对项目进行压力，有时间可以进行Apache JMeter的压力测试。
 ## 后期完善优化和扩展
 
 - 优化参数方面校验，支持xml方式的配置集成spring sec安全插件
