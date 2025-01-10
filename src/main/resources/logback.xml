@@ -1,0 +1,29 @@
+<configuration>
+    <!-- 定义日志的上下文名称 -->
+    <contextName>myApp</contextName>
+    <!-- 定义属性，方便修改和管理 -->
+    <property name="LOG_DIR" value="logs"/>
+    <property name="LOG_FILE" value="${LOG_DIR}/balance-calc-demo.log"/>
+
+    <!-- 定义滚动文件的 Appender -->
+    <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/balance-calc-demo-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 根日志记录器，设置日志级别为 INFO，并使用多个 Appender -->
+    <root level="INFO">
+        <appender-ref ref="ROLLING_FILE"/>
+    </root>
+
+    <!-- 可以添加自定义的 Logger -->
+    <logger name="com.vseeliu.balancecalc" level="DEBUG">
+        <appender-ref ref="ROLLING_FILE"/>
+    </logger>
+</configuration>

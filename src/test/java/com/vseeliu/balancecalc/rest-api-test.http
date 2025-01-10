@@ -1,0 +1,93 @@
+### 1、查询交易处理结果
+GET http://{{host}}/v1/api/transactions/5e05a3da-87d4-48c3-91f8-6af3a2387da8/result
+Content-Type: application/json
+
+### 2、查询交易处理结果
+GET http://{{host}}/v1/api/transactions/5e05a3da-87d4-48c3-91f8-6af3a2387da8/result
+Content-Type: application/json
+
+### 3、同步处理正确的交易请求
+POST http://{{host}}/v1/api/transactions
+Content-Type: application/json
+
+{
+  "transactionId": "{{$random.uuid}}",
+  "sourceAccountNumber": "111111111111",
+  "targetAccountNumber": "222222222222",
+  "amount": 1.11,
+  "timestamp": {{$timestamp}}
+}
+> {%
+    var date = new Date();
+    client.global.set("timestamp", date.getTime().valueOf());
+
+    client.test("同步处理正确的交易请求", function (){
+        // 验证状态码是200
+        client.assert(response.status === 200, "Expected 200 OK response");
+        client.assert(response.body === "Transaction processed successfully", "Transaction processed successfully");
+    })
+%}
+
+
+### 4、同步处理错误的请求
+POST http://{{host}}/v1/api/transactions
+Content-Type: application/json
+
+{
+  "transactionId": "{{$random.uuid}}",
+  "sourceAccountNumber": "111111111111",
+  "targetAccountNumber": "222222222222",
+  "amount": 1.11,
+  "timestamp": {{$timestamp}}
+}
+> {%
+    var date = new Date();
+    client.global.set("timestamp", date.getTime().valueOf());
+
+    client.test("同步处理错误的请求", function (){
+        // 验证状态码是200
+        client.assert(response.status === 200, "Expected 200 OK response");
+        client.assert(response.body === "Transaction processed successfully", "Transaction processed successfully");
+    })
+%}
+
+### 5、异步处理正确的交易请求
+POST http://{{host}}/v1/api/transactions/transfer
+Content-Type: application/json
+
+{
+  "transactionId": "{{$random.uuid}}",
+  "sourceAccountNumber": "111111111111",
+  "targetAccountNumber": "222222222222",
+  "amount": 1.11,
+  "timestamp": {{$timestamp}}
+}
+> {%
+    var date = new Date();
+    client.global.set("timestamp", date.getTime().valueOf());
+%}
+
+### 6、异步处理的交易请求结果查询
+GET http://{{host}}/v1/api/transactions/5e05a3da-87d4-48c3-91f8-6af3a2387da8/result
+Content-Type: application/json
+
+### 7、异步处理错误的交易请求
+POST http://{{host}}/v1/api/transactions/transfer
+Content-Type: application/json
+
+{
+  "transactionId": "{{$random.uuid}}",
+  "sourceAccountNumber": "111111111111",
+  "targetAccountNumber": "222222222222",
+  "amount": 1.11,
+  "timestamp": {{$timestamp}}
+}
+> {%
+    var date = new Date();
+    client.global.set("timestamp", date.getTime().valueOf());
+%}
+
+### 8、异步处理的错误的交易请求结果查询
+GET http://{{host}}/v1/api/transactions/5e05a3da-87d4-48c3-91f8-6af3a2387da8/result
+Content-Type: application/json
+
