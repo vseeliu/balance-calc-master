@@ -30,6 +30,14 @@ RDS(mysq)。
 
 ## Docker部署运行
 
+- Docker文件
+  
+  根目录下的Dockerfile文件
+  ```
+    使用盖命令进行docker镜像的制作.
+    docker build -t
+  ```
+  
 - 使用aws configure配置密钥凭证相关用于连接AWS ECR和 AWS EKS
 - 登录AWS ECR
   ```
