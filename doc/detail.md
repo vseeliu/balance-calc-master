@@ -30,6 +30,14 @@
 
 ![](./image/class.png)
 
+### rest api 定义
+  ```
+  post /v1/api/transactions 同步方式处理交易
+  post /v1/api/transactions/transfer 异步处理交易
+  get  /v1/api/transactions/{transactionId}/result 获取异步处理交易的结果
+  ```
+  
+
 ### 数据库表设计以及脚本
 
 - 账户表account
