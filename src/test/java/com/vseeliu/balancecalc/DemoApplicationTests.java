@@ -1,6 +1,8 @@
 package com.vseeliu.balancecalc;
 
+import com.vseeliu.balancecalc.sqs.MessageProcessor;
 import com.vseeliu.balancecalc.util.AwsSqsUtil;
+import com.vseeliu.balancecalc.util.RedisLockUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,5 +26,7 @@ class DemoApplicationTests {
 	void testBeansPresence() {
 		assertNotNull(context.getBean(AwsSqsUtil.class), "AWSConfig bean should be loaded");
 		assertNotNull(context.getBean(SqsClient.class), "SqsClient bean should be loaded");
+		assertNotNull(context.getBean(RedisLockUtil.class), "RedisLockUtil bean should be loaded");
+		assertNotNull(context.getBean(MessageProcessor.class), "RedisLockUtil bean should be loaded");
 	}
 }

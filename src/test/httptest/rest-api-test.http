@@ -2,9 +2,17 @@
 GET http://{{host}}/v1/api/transactions/5e05a3da-87d4-48c3-91f8-6af3a2387da8/result
 Content-Type: application/json
 
-### 2、查询交易处理结果
-GET http://{{host}}/v1/api/transactions/5e05a3da-87d4-48c3-91f8-6af3a2387da8/result
+### 2、查询参数错误的校验请求结果
+GET http://{{host}}/v1/api/transactions/5e05a3da-87d4-48c3-91f8-6af3a2387da7/result
 Content-Type: application/json
+
+> {%
+
+    client.test("同步处理正确的交易请求", function (){
+    // 验证状态码是500
+    client.assert(response.status === 500, "Expected 500");
+})
+%}
 
 ### 3、同步处理正确的交易请求
 POST http://{{host}}/v1/api/transactions

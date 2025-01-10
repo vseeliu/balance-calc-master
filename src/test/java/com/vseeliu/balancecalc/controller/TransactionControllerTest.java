@@ -1,8 +1,5 @@
 package com.vseeliu.balancecalc.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vseeliu.balancecalc.entity.Transaction;
-import com.vseeliu.balancecalc.util.JsonUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,8 +11,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
-import java.util.UUID;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(useMainMethod = SpringBootTest.UseMainMethod.ALWAYS)
