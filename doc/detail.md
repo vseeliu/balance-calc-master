@@ -80,6 +80,9 @@ insert into transaction(transaction_id, source_account_number, target_account_nu
 
 - API-test
   ![](./image/api-test.png)
+  - aws test
+    ![](./image/aws-test.png)
+    ![](./image/network-error.png)
 - UNIT-test
   ![](./image/unit-test.png)
 
