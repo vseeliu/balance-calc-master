@@ -32,11 +32,12 @@
 
 ### 视频讲解
 
-<iframe width="560" height="315" src="https://www.yuque.com/u50764528/tccaef/fowazdl4m3a9gxf2?singleDoc# 《balance-vedio》"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard - write; encrypted - media; gyroscope; picture - in - picture; web - share" allowfullscreen></iframe>
-```
-      https://www.yuque.com/u50764528/tccaef/fowazdl4m3a9gxf2?singleDoc# 《balance-video》
-```
+<iframe width="560" height="315" src="https://www.yuque.com/u50764528/tccaef/fowazdl4m3a9gxf2?singleDoc# 《balance-vedio》" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard - write; encrypted - media; gyroscope; picture - in - picture; web - share" allowfullscreen></iframe>
+
+  ```
+        https://www.yuque.com/u50764528/tccaef/fowazdl4m3a9gxf2?singleDoc# 《balance-video》
+  ```
+
 ### rest api 定义
   ```
   post /v1/api/transactions 同步方式处理交易
@@ -75,7 +76,7 @@ CREATE TABLE `transaction` (
    FOREIGN KEY (`source_account_number`) REFERENCES `account`(`account_number`),
    FOREIGN KEY (`target_account_number`) REFERENCES `account`(`account_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+//测试预置数据
 insert into account(account_number, balance) values('111111111111',10000.00);
 insert into account(account_number, balance) values('222222222221',2000.10);
 insert into account(account_number, balance) values('111111111119',9988.90);
