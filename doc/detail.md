@@ -30,6 +30,13 @@
 
 ![](./image/class.png)
 
+### 视频讲解
+
+<iframe width="560" height="315" src="https://www.yuque.com/u50764528/tccaef/fowazdl4m3a9gxf2?singleDoc# 《balance-vedio》"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard - write; encrypted - media; gyroscope; picture - in - picture; web - share" allowfullscreen></iframe>
+```
+      https://www.yuque.com/u50764528/tccaef/fowazdl4m3a9gxf2?singleDoc# 《balance-video》
+```
 ### rest api 定义
   ```
   post /v1/api/transactions 同步方式处理交易
